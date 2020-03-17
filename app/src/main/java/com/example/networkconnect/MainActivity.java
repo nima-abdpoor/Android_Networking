@@ -20,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
             case "1":
                 startActivity(new Intent(MainActivity.this,getdatafrominternet.class));
                 break;
+            case "2":
+                startActivity(new Intent(MainActivity.this,AsynctaskActivity.class));
+                break;
             default:break;
         }
     }
