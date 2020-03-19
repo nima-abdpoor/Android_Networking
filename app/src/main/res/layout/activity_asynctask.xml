@@ -7,20 +7,42 @@
     tools:context=".AsynctaskActivity">
     <Button
         android:layout_width="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_centerHorizontal="false"
         android:layout_centerVertical="false"
+        android:layout_alignParentLeft="true"
         android:text="start"
         android:id="@+id/start"
         android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/setURL"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="https://"
+        android:layout_below="@+id/start"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        />
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/start"
+        android:layout_below="@+id/setURL"
         android:layout_centerVertical="false"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:id="@+id/text"
         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="false"
+        android:layout_centerVertical="false"
+        android:layout_alignParentRight="true"
+        android:text="Get data"
+        android:id="@+id/getdate"
+        android:layout_height="wrap_content"/>
+
 
 </RelativeLayout>
 
