@@ -1,20 +1,19 @@
 package com.example.networkconnect;
 
 import android.os.AsyncTask;
-import android.text.Editable;
-import android.widget.TextView;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
-
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class AsyncTaskforgettingdata extends AsyncTask <String ,String ,String>{
-    String URL="";
+    String urladdress ="";
     AsyncTaskforgettingdata(String s){
-        URL=s;
+        urladdress =s;
     }
     @Override
     protected void onPreExecute() {
@@ -23,15 +22,22 @@ public class AsyncTaskforgettingdata extends AsyncTask <String ,String ,String>{
 
     @Override
     protected String doInBackground(String...params) {
-        return getdate(URL);
+       // return getdatafromapache(urladdress);
+       return getdatehttpclient(urladdress);
     }
 
     @Override
     protected void onPostExecute(String result) {
-        AsynctaskActivity.showresult.append(result);
+        try {
+            AsynctaskActivity.showresult.append(result);
+        }
+        catch (NullPointerException ex){
+            ex.getMessage();
+        }
     }
 
-    private String getdate(String URL) {
+    @Deprecated
+    private String getdatafromapache(String URL) {
         HttpClient httpClient=new DefaultHttpClient();
         HttpGet method=new HttpGet(URL);
         try {
@@ -41,6 +47,19 @@ public class AsyncTaskforgettingdata extends AsyncTask <String ,String ,String>{
         } catch (IOException e) {
             e.printStackTrace();
             return "null";
+        }
+    }
+
+
+    private String getdatehttpclient(String uri) {
+        try {
+            URL urlo=new URL(uri);
+            HttpURLConnection connection= (HttpURLConnection) urlo.openConnection();
+            String result= Utils.inputstreamtoString(connection.getInputStream());
+            return result;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return e.getMessage();
         }
     }
 }
