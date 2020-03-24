@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AsynctaskActivity"></activity>
+        <activity android:name=".VolleyActivity"></activity>
+        <activity android:name=".Httprequest" />
+        <activity android:name=".AsynctaskActivity" />
         <activity android:name=".getdatafrominternet" />
         <activity android:name=".MainActivity">
             <intent-filter>

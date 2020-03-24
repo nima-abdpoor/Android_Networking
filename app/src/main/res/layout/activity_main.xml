@@ -17,6 +17,7 @@
         android:tag="1"
         />
     <Button
+        android:id="@+id/asynctack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -25,6 +26,27 @@
         android:text="Async task"
         android:onClick="getdate"
         android:tag="2"
+        />
+    <Button
+        android:id="@+id/requesthttp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/asynctack"
+        android:layout_marginTop="40dp"
+        android:text="Request"
+        android:onClick="getdate"
+        android:tag="3"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/requesthttp"
+        android:layout_marginTop="40dp"
+        android:text="Volley"
+        android:onClick="getdate"
+        android:tag="4"
         />
 
 </RelativeLayout>

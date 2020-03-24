@@ -23,6 +23,12 @@ public class MainActivity extends AppCompatActivity {
             case "2":
                 startActivity(new Intent(MainActivity.this,AsynctaskActivity.class));
                 break;
+            case "3":
+                startActivity(new Intent(MainActivity.this,Httprequest.class));
+                break;
+            case "4":
+                startActivity(new Intent(MainActivity.this,VolleyActivity.class));
+                break;
             default:break;
         }
     }
